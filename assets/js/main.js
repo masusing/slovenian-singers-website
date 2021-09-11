@@ -96,24 +96,26 @@
   // Main Sections: Two.
 
   // isotope
-  var $grid = $('.isotope-grid').isotope({
-    // options
-    itemSelector: '.isotope-grid-item',
-    layoutMode: 'fitRows'
-  });
-
-  $('.filters-button-group').on('click', 'button', function () {
-    var filterValue = $(this).attr('data-filter');
-    $grid.isotope({ filter: filterValue });
-  });
-  // change is-checked class on buttons
-  $('.button-group').each(function (i, buttonGroup) {
-    var $buttonGroup = $(buttonGroup);
-    $buttonGroup.on('click', 'button', function () {
-      $buttonGroup.find('.is-checked').removeClass('is-checked');
-      $(this).addClass('is-checked');
+  if ($('.isotope-grid').length > 0) {
+    var $grid = $('.isotope-grid').isotope({
+      // options
+      itemSelector: '.isotope-grid-item',
+      layoutMode: 'fitRows'
     });
-  });
+
+    $('.filters-button-group').on('click', 'button', function () {
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+    // change is-checked class on buttons
+    $('.button-group').each(function (i, buttonGroup) {
+      var $buttonGroup = $(buttonGroup);
+      $buttonGroup.on('click', 'button', function () {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $(this).addClass('is-checked');
+      });
+    });
+  }
   // end isotope
 
   // Lightbox gallery.
