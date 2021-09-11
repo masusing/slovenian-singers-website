@@ -206,7 +206,7 @@ a {
     -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-    border-bottom: dotted 1px;
+    /* border-bottom: dotted 1px; */
     color: #49bf9d;
     text-decoration: none;
 }
@@ -215,6 +215,10 @@ a:hover {
     border-bottom-color: transparent;
     color: #49bf9d !important;
     text-decoration: none;
+}
+
+a.active {
+    text-decoration: underline;
 }
 
 strong,
